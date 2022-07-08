@@ -4,8 +4,23 @@
 
 class Bird
 
-  attr_accessor :name, :age
+  attr_reader :name, :age
 
+  def name=(value)
+    if value == ""
+      raise "Invalid name attribute";
+    end
+
+    @name = value 
+  end
+
+  def age=(value)
+    if value < 0
+      raise "Invalid age attribute"
+    end
+    @age = value
+  end
+  
   def talk
     puts "#{name} says Chirp, Chirp!";
   end
@@ -22,7 +37,22 @@ end
 
 class Cat
 
-  attr_accessor :name, :age
+  attr_reader :name, :age
+
+  def name=(value)
+    if value == ""
+      raise "Invalid name attribute";
+    end
+    @name = value 
+  end
+
+  def age=(value)
+    if value < 0
+      raise "Invalid age attribute"
+    end
+    @age = value
+  end
+  
 
   def talk
     puts "#{name} says meow!";
@@ -40,7 +70,23 @@ end
 
 class Dog
 
-  attr_accessor :name, :age
+  attr_reader :name, :age
+
+  def name=(value)
+    if value == ""
+      raise "Invalid name attribute";
+    end
+
+    @name = value 
+  end
+
+  def age=(value)
+    if value < 0
+      raise "Invalid age attribute"
+    end
+    @age = value
+  end
+  
 
   def talk
     puts "#{name} says Bark!";
