@@ -38,6 +38,10 @@ class Animal
 end
 
 class Dog < Animal
+  #Override
+  def to_s
+    return "#{@name} the dog, age #{@age}"
+  end
 end
 
 class Cat < Animal
@@ -82,5 +86,7 @@ bird.move("trees")
 dog.talk
 bird.talk
 cat.move("house")
+
+puts dog
 
 ##TYJC
