@@ -6,6 +6,11 @@ class Employee
 
   attr_reader :name, :salary
 
+  def initialize(name = "Anonymous", salary = 0)
+    @name = name
+    @salary = salary
+  end
+  
   def name=(value)
     if value == ""
       raise "Invalid entry for name"
@@ -24,16 +29,19 @@ class Employee
 
   def print_pay_stub
     puts "Name :#{@name}"
-    pay_for_this_period = @salary * 14.0 / 365.0;
+    pay_for_this_period = format("%.2f", @salary * 14.0 / 365.0)
     puts "Pay This Period : #{pay_for_this_period} "
   end
 
 end
 
-amy = Employee.new
+amy = Employee.new("Amy", 40000)
 amy.name = "Amy Blake"
 amy.salary = 50000
 
 amy.print_pay_stub
+
+unknown = Employee.new()
+unknown.print_pay_stub
 
 ##TYJC
