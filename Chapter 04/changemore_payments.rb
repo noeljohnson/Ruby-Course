@@ -7,8 +7,8 @@ class Employee
   attr_reader :name, :salary
 
   def initialize(name = "Anonymous", salary = 0)
-    @name = name
-    @salary = salary
+    self.name = name
+    self.salary = salary
   end
   
   def name=(value)
@@ -28,8 +28,8 @@ class Employee
   end
 
   def print_pay_stub
-    puts "Name :#{@name}"
-    pay_for_this_period = format("%.2f", @salary * 14.0 / 365.0)
+    puts "Name :#{name}"
+    pay_for_this_period = format("%.2f", salary * 14.0 / 365.0)
     puts "Pay This Period : #{pay_for_this_period} "
   end
 
@@ -41,7 +41,7 @@ amy.salary = 50000
 
 amy.print_pay_stub
 
-unknown = Employee.new()
+unknown = Employee.new("Nj", 2)
 unknown.print_pay_stub
 
 ##TYJC
