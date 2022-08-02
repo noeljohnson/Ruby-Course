@@ -49,6 +49,18 @@ end
 class HourlyEmployee < Employee
   attr_reader :hourly_salary, :hours_per_week
 
+  def self.security_guard(name)
+    HourlyEmployee.new(name, 19.25, 30)
+  end
+
+  def self.cashier(name)
+    HourlyEmployee.new(name, 12.75, 25)
+  end
+
+  def self.janitor(name)
+    HourlyEmployee.new(name, 10.50, 20)
+  end
+
   def initialize(name = "Anonymous", hourly_salary = 0.0, hours_per_week = 0.0)
     self.name=(name)
     self.hourly_salary=(hourly_salary)
@@ -84,5 +96,11 @@ amy.print_pay_stub()
 
 jane = HourlyEmployee.new("John Smith", 14.97, 30)
 jane.print_pay_stub()
+
+angela = HourlyEmployee.security_guard("Angela Matthews")
+ivan = HourlyEmployee.cashier("Evan Stokes")
+angela.print_pay_stub()
+ivan.print_pay_stub()
+
 
 ##TYJC
